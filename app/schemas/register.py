@@ -10,5 +10,6 @@ class UserRead(BaseModel):
     username: str
     fullname: str
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True  # enable ORM support in Pydantic v2
+    }
